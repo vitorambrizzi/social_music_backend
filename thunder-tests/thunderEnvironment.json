@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "0bdabf32-307a-4a0c-98d1-7f2e6d38dd76",
+    "name": "Social Music",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-12-10T21:10:02.049Z",
+    "modified": "2022-12-10T21:10:02.049Z",
+    "data": [
+      {
+        "name": "BASE_PATH",
+        "value": "http://localhost/social_music/backend/"
+      }
+    ]
+  }
+]
