@@ -1,9 +1,5 @@
 <?php
 class UserController {
-  static function test() {
-    echo 'test';
-  }
-
   static function sign_up() {
     Router::allowed_method('POST');
 
