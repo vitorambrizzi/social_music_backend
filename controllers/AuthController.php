@@ -28,13 +28,25 @@ class AuthController {
       $result['error']['message'] = 'Email or password invalid! Please, try again.';
       Output::response($result, 401);
     }
+  }
 
-    $result['success']['message'] = 'User created successfully!';
-    $result['user'] = $data;
-    $result['user']['pass'] = $pass;
-    $result['user']['id'] = $id;
+  static function logout() {
+    Router::allowed_method('POST');
 
-    Output::response($result);
+    $data = Input::get_data();
+    $id_user = $data['id_user'];
+    $token = $data['token'];
+
+    $session = new Session(null, $id_user, $token, null);
+    $deleted = $session->delete();
+
+    if ($deleted) {
+      $result['success']['message'] = 'User logged out successfully!';
+      Output::response($result);
+    } else {
+      $result['error']['message'] = 'Error logging out! Please, try again';
+      Output::response($result, 500);
+    }
   }
 }
 ?>
