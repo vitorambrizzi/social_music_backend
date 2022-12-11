@@ -8,12 +8,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T21:11:31.838Z",
-    "modified": "2022-12-10T21:11:31.838Z",
+    "modified": "2022-12-11T21:44:42.884Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"teste@gmail.com\",\n  \"pass\": \"123123\"\n}",
+      "raw": "{\n  \"name\": \"Vítor Ambrizzi\",\n  \"email\": \"vitorambrizzi@gmail.com\",\n  \"pass\": \"123123\"\n}",
       "form": []
     },
     "tests": []
@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-12-11T20:20:46.824Z",
-    "modified": "2022-12-11T20:38:08.504Z",
+    "modified": "2022-12-11T21:45:12.733Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"teste@gmail.com\",\n  \"pass\": \"123123\"\n}",
+      "raw": "{\n  \"email\": \"vitorambrizzi@gmail.com\",\n  \"pass\": \"123123\"\n}",
       "form": []
     },
     "tests": []
@@ -46,12 +46,12 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2022-12-11T20:40:29.257Z",
-    "modified": "2022-12-11T20:40:29.257Z",
+    "modified": "2022-12-11T21:45:43.737Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"id_user\": \"14\",\n  \"token\": \"0320cd252c97088739f19d6462d746b060db9560a51a2839fbbefa92337a9a7d\"\n}",
+      "raw": "{\n  \"id_user\": \"16\",\n  \"token\": \"fb265bb4b1095c17828692f30a624adfb1537e388a7415adcdf9f433849e5eab\"\n}",
       "form": []
     },
     "tests": []

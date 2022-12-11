@@ -4,10 +4,11 @@ class UserController {
     Router::allowed_method('POST');
 
     $data = Input::get_data();
+    $name = $data['name'];
     $email = $data['email'];
     $pass = Input::bcrypt($data['pass'], '12');
 
-    $user = new User(null, $email, $pass);
+    $user = new User(null, $name, $email, $pass);
     $id = $user->create();
 
     $result['success']['message'] = 'User created successfully!';

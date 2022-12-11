@@ -7,7 +7,7 @@ class AuthController {
     $email = $data['email'];
     $pass = $data['pass'];
 
-    $user = new User(null, $email, $pass);
+    $user = new User(null, null, $email, $pass);
     if ($user->pass_check()) {
       $user_logged = $user->login();
       $token = hash('sha256', uniqid(rand(), true));

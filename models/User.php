@@ -1,11 +1,13 @@
 <?php
 class User {
   private $id;
+  private $name;
   private $email;
   private $pass;
 
-  function __construct($id, $email, $pass) {
+  function __construct($id, $name, $email, $pass) {
     $this->id = $id;
+    $this->name = $name;
     $this->email = $email;
     $this->pass = $pass;
   }
@@ -14,7 +16,8 @@ class User {
     $conn = Database::connect();
 
     try {
-      $stmt = $conn->prepare("INSERT INTO users (email, pass) VALUES (:email, :pass);");
+      $stmt = $conn->prepare("INSERT INTO users (name, email, pass) VALUES (:name, :email, :pass);");
+      $stmt->bindParam(':name', $this->name);
       $stmt->bindParam(':email', $this->email);
       $stmt->bindParam(':pass', $this->pass);
       $stmt->execute();
