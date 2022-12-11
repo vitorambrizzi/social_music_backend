@@ -26,5 +26,39 @@ class User {
       Database::db_error($e);
     }
   }
+
+  function pass_check() {
+    $conn = Database::connect();
+
+    try {
+      $stmt = $conn->prepare("SELECT pass FROM users WHERE email = :email;");
+      $stmt->bindParam(':email', $this->email);
+      $stmt->execute();
+
+      $hash = $stmt->fetch(PDO::FETCH_ASSOC);
+      $conn = null;
+
+      return password_verify($this->pass, $hash['pass']);
+    } catch(PDOException $e) {
+      Database::db_error($e);
+    }
+  }
+
+  function login() {
+    $conn = Database::connect();
+
+    try {
+      $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email;");
+      $stmt->bindParam(':email', $this->email);
+      $stmt->execute();
+
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+      $conn = null;
+
+      return $user;
+    } catch(PDOException $e) {
+      Database::db_error($e);
+    }
+  }
 }
 ?>
