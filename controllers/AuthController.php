@@ -25,7 +25,7 @@ class AuthController {
         Output::response($result, 500);
       }
     } else {
-      $result['error']['message'] = 'Password invalid! Please, try again.';
+      $result['error']['message'] = 'Email or password invalid! Please, try again.';
       Output::response($result, 401);
     }
 

@@ -38,7 +38,11 @@ class User {
       $hash = $stmt->fetch(PDO::FETCH_ASSOC);
       $conn = null;
 
-      return password_verify($this->pass, $hash['pass']);
+      if (is_array($hash)) {
+        return password_verify($this->pass, $hash['pass']);
+      } else {
+        return false;
+      }
     } catch(PDOException $e) {
       Database::db_error($e);
     }
