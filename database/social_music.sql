@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 10:46 PM
+-- Generation Time: Dec 12, 2022 at 04:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -52,7 +52,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `pass`) VALUES
-(16, 'Vítor Ambrizzi', 'vitorambrizzi@gmail.com', '$2y$12$rhAQh8aubsZIneg7TsCVyO0EMZQionQyJ8ZHs3d7teTMBibmHMwIu');
+(1, 'Allan Gabriel', 'allangabriel@gmail.com', '$2y$12$hBL8ilKYy0r4s/Df5wwUwu2lcU2DYrRBzZgWG.YFB2/LK8iPmOw1C'),
+(2, 'Breno Machado', 'brenomachado@gmail.com', '$2y$12$7wmgpIN/NKuT3yy2zooUY.Qv6G7tFerlw4r3..WOLJQkHClUNkbq.'),
+(3, 'Micaella Larissa', 'micaellalarissa@gmail.com', '$2y$12$tt9SDG23Bv17NCZYiBzJ7eqRUt3TeIoitLD3SrV7XJmoxwrmFkPnu'),
+(4, 'Renan Cavichi', 'renancavichi@gmail.com', '$2y$12$UzQAtn8Wc6XLNXck0Qg.pekO7LFR/qpvf5TXI4deuJha8bHWBk4eG'),
+(5, 'Vítor Ambrizzi', 'vitorambrizzi@gmail.com', '$2y$12$WXzGiSovbnVBI6nLzXmXruRwXqMcBjsexzLWW3PhJ/GBRufoee4xe');
 
 --
 -- Indexes for dumped tables
@@ -80,13 +84,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
