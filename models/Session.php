@@ -41,6 +41,7 @@ class Session {
 
       $rows_affected = $stmt->rowCount();
       $conn = null;
+      
       if ($rows_affected === 1) {
         return true;
       } else {

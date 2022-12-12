@@ -57,5 +57,28 @@ class UserController {
       Output::response($result, 404);
     }
   }
+
+  static function delete() {
+    Router::allowed_method('DELETE');
+    $data = Input::get_data();
+
+    if (isset($data['id']) && $data['id'] != '') {
+      $id = $data['id'];
+    } else {
+      $result['error']['message'] = 'Id parameter is required!';
+      Output::response($result, 406);
+    }
+
+    $user = new User($id, null, null, null);
+    $deleted = $user->delete();
+
+    if ($deleted) {
+      $result['success']['message'] = "User $id deleted successfully!";
+      Output::response($result);
+    } else {
+      $result['error']['message'] = "User $id not found for deletion!";
+      Output::response($result, 404);
+    }
+  }
 }
 ?>

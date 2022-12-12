@@ -89,5 +89,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "108ba3d6-20c6-45ec-a534-c42b2174fe50",
+    "colId": "2e053302-7708-47df-b177-4a556513f29f",
+    "containerId": "",
+    "name": "user/delete",
+    "url": "{{BASE_PATH}}user/delete",
+    "method": "DELETE",
+    "sortNum": 60000,
+    "created": "2022-12-12T14:22:24.838Z",
+    "modified": "2022-12-12T14:22:24.838Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": \"32\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

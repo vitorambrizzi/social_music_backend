@@ -97,5 +97,26 @@ class User {
       Database::db_error($e);
     }
   }
+
+  function delete() {
+    $conn = Database::connect();
+
+    try {
+      $stmt = $conn->prepare("DELETE FROM users WHERE id = :id;");
+      $stmt->bindParam(':id', $this->id);
+      $stmt->execute();
+
+      $rows_affected = $stmt->rowCount();
+      $conn = null;
+      
+      if ($rows_affected === 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch(PDOException $e) {
+      Database::db_error($e);
+    }
+  }
 }
 ?>
