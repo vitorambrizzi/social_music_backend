@@ -80,5 +80,31 @@ class UserController {
       Output::response($result, 404);
     }
   }
+
+  static function update() {
+    Router::allowed_method('PUT');
+    $data = Input::get_data();
+
+    if (isset($data['id']) && $data['id'] != '') {
+      $id = $data['id'];
+    } else {
+      $result['error']['message'] = 'Id parameter is required!';
+      Output::response($result, 406);
+    }
+    $name = $data['name'];
+    $email = $data['email'];
+
+    $user = new User($id, $name, $email, null);
+    $updated = $user->update();
+
+    if ($updated) {
+      $result['success']['message'] = 'User updated successfully!';
+      $result['user'] = $data;
+      Output::response($result);
+    } else {
+      $result['error']['message'] = "User $id not found for updates!";
+      Output::response($result, 404);
+    }
+  }
 }
 ?>

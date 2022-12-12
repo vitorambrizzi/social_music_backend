@@ -108,7 +108,30 @@ class User {
 
       $rows_affected = $stmt->rowCount();
       $conn = null;
-      
+
+      if ($rows_affected === 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch(PDOException $e) {
+      Database::db_error($e);
+    }
+  }
+
+  function update() {
+    $conn = Database::connect();
+
+    try {
+      $stmt = $conn->prepare("UPDATE users SET name = :name, email = :email WHERE id = :id;");
+      $stmt->bindParam(':name', $this->name);
+      $stmt->bindParam(':email', $this->email);
+      $stmt->bindParam(':id', $this->id);
+      $stmt->execute();
+
+      $rows_affected = $stmt->rowCount();
+      $conn = null;
+
       if ($rows_affected === 1) {
         return true;
       } else {

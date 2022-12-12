@@ -108,5 +108,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "86b773b5-290c-4d05-98e5-5acadd3b20fc",
+    "colId": "2e053302-7708-47df-b177-4a556513f29f",
+    "containerId": "",
+    "name": "user/update",
+    "url": "{{BASE_PATH}}user/update",
+    "method": "PUT",
+    "sortNum": 70000,
+    "created": "2022-12-12T14:49:35.672Z",
+    "modified": "2022-12-12T14:49:35.672Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\": \"33\",\n  \"name\": \"Renan Cavichi\",\n  \"email\": \"renancavichi@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
