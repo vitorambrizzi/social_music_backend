@@ -8,12 +8,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T21:11:31.838Z",
-    "modified": "2022-12-11T21:44:42.884Z",
+    "modified": "2022-12-12T13:29:56.991Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Vítor Ambrizzi\",\n  \"email\": \"vitorambrizzi@gmail.com\",\n  \"pass\": \"123123\"\n}",
+      "raw": "{\n  \"name\": \"Renan Cavichi\",\n  \"email\": \"renancavichi@gmail.com\",\n  \"pass\": \"123123\"\n}",
       "form": []
     },
     "tests": []
@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2022-12-11T20:20:46.824Z",
-    "modified": "2022-12-11T21:45:12.733Z",
+    "modified": "2022-12-12T13:30:26.018Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"vitorambrizzi@gmail.com\",\n  \"pass\": \"123123\"\n}",
+      "raw": "{\n  \"email\": \"renancavichi@gmail.com\",\n  \"pass\": \"123123\"\n}",
       "form": []
     },
     "tests": []
@@ -43,17 +43,37 @@
     "containerId": "",
     "name": "auth/logout",
     "url": "{{BASE_PATH}}auth/logout",
-    "method": "POST",
+    "method": "DELETE",
     "sortNum": 30000,
     "created": "2022-12-11T20:40:29.257Z",
-    "modified": "2022-12-11T21:45:43.737Z",
+    "modified": "2022-12-12T13:30:59.239Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"id_user\": \"16\",\n  \"token\": \"fb265bb4b1095c17828692f30a624adfb1537e388a7415adcdf9f433849e5eab\"\n}",
+      "raw": "{\n  \"id_user\": \"30\",\n  \"token\": \"e9098ce353c613bf8aa047d4f831f68f3c450bcf4b26f43ee60b875f5a734eab\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "80f26ef7-fb28-4d6b-96b9-954d68d2fc7c",
+    "colId": "2e053302-7708-47df-b177-4a556513f29f",
+    "containerId": "",
+    "name": "user/by-id",
+    "url": "{{BASE_PATH}}user/by-id?id=16",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-12-12T13:45:13.268Z",
+    "modified": "2022-12-12T13:45:13.268Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "16",
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]

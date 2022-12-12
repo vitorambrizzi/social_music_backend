@@ -61,7 +61,22 @@ class User {
 
       $user = $stmt->fetch(PDO::FETCH_ASSOC);
       $conn = null;
+      return $user;
+    } catch(PDOException $e) {
+      Database::db_error($e);
+    }
+  }
 
+  function get_by_id() {
+    $conn = Database::connect();
+
+    try {
+      $stmt = $conn->prepare("SELECT name, email FROM users WHERE id = :id;");
+      $stmt->bindParam(':id', $this->id);
+      $stmt->execute();
+
+      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+      $conn = null;
       return $user;
     } catch(PDOException $e) {
       Database::db_error($e);

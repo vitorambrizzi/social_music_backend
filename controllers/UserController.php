@@ -18,5 +18,28 @@ class UserController {
 
     Output::response($result);
   }
+
+  static function by_id() {
+    Router::allowed_method('GET');
+
+    if (isset($_GET['id'])) {
+      $id = $_GET['id'];
+    } else {
+      $result['error']['message'] = 'Id parameter is required!';
+      Output::response($result, 406);
+    }
+
+    $user = new User($id, null, null, null);
+    $user_data = $user->get_by_id();
+
+    if (is_array($user_data)) {
+      $result['success']['message'] = 'User successfully selected!';
+      $result['data'] = $user_data;
+      Output::response($result);
+    } else {
+      $result['error']['message'] = 'User not found!';
+      Output::response($result, 404);
+    }
+  }
 }
 ?>
