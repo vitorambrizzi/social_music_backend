@@ -31,7 +31,7 @@ class AuthController {
   }
 
   static function logout() {
-    Router::allowed_method('POST');
+    Router::allowed_method('DELETE');
 
     $data = Input::get_data();
     $id_user = $data['id_user'];
