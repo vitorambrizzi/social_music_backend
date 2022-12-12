@@ -19,6 +19,22 @@ class UserController {
     Output::response($result);
   }
 
+  static function list() {
+    Router::allowed_method('GET');
+
+    $user = new User(null, null, null, null);
+    $users_data = $user->get_list();
+
+    if (empty($users_data)) {
+      $result['success']['message'] = 'No users!';
+      Output::response($result);
+    } else {
+      $result['success']['message'] = 'User list has been successfully selected!';
+      $result['data'] = $users_data;
+      Output::response($result);
+    }
+  }
+
   static function by_id() {
     Router::allowed_method('GET');
 

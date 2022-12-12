@@ -75,5 +75,19 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "a33a12c1-5b82-4db6-882e-149831f9e17f",
+    "colId": "2e053302-7708-47df-b177-4a556513f29f",
+    "containerId": "",
+    "name": "user/list",
+    "url": "{{BASE_PATH}}user/list",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-12-12T13:56:46.965Z",
+    "modified": "2022-12-12T13:56:46.965Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]

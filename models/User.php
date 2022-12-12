@@ -82,5 +82,20 @@ class User {
       Database::db_error($e);
     }
   }
+
+  function get_list() {
+    $conn = Database::connect();
+
+    try {
+      $stmt = $conn->prepare("SELECT id, name, email FROM users;");
+      $stmt->execute();
+
+      $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $conn = null;
+      return $users;
+    } catch(PDOException $e) {
+      Database::db_error($e);
+    }
+  }
 }
 ?>
