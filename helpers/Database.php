@@ -6,7 +6,6 @@ class Database {
     try {
       $conn = new PDO($dsn, DB_USER, DB_PASS);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      
       return $conn;
     } catch(PDOException $e) {
       self::db_error($e);
