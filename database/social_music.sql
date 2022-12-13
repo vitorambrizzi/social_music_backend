@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 04:00 PM
+-- Generation Time: Dec 13, 2022 at 04:48 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,6 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `albums`
+--
+
+CREATE TABLE `albums` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `identifier` varchar(229) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `artists`
+--
+
+CREATE TABLE `artists` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `identifier` varchar(229) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sessions`
 --
 
@@ -32,6 +56,18 @@ CREATE TABLE `sessions` (
   `id_user` int(11) NOT NULL,
   `token` varchar(64) NOT NULL,
   `client` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tracks`
+--
+
+CREATE TABLE `tracks` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `identifier` varchar(229) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -63,11 +99,32 @@ INSERT INTO `users` (`id`, `name`, `email`, `pass`) VALUES
 --
 
 --
+-- Indexes for table `albums`
+--
+ALTER TABLE `albums`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user_albums-id_users` (`id_user`) USING BTREE;
+
+--
+-- Indexes for table `artists`
+--
+ALTER TABLE `artists`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user_artists-id_users` (`id_user`);
+
+--
 -- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user_sessions-id_users` (`id_user`);
+
+--
+-- Indexes for table `tracks`
+--
+ALTER TABLE `tracks`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_user_tracks-id_users` (`id_user`);
 
 --
 -- Indexes for table `users`
@@ -81,9 +138,27 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `albums`
+--
+ALTER TABLE `albums`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `artists`
+--
+ALTER TABLE `artists`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tracks`
+--
+ALTER TABLE `tracks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
