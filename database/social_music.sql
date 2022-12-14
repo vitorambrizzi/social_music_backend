@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2022 at 04:48 PM
+-- Generation Time: Dec 14, 2022 at 03:51 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -30,8 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `albums` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `identifier` varchar(229) NOT NULL
+  `identifier` varchar(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `albums`
+--
+
+INSERT INTO `albums` (`id`, `id_user`, `identifier`) VALUES
+(2, 5, '1HQ61my1h3VWp2EBWKlp0n');
 
 -- --------------------------------------------------------
 
@@ -42,8 +49,15 @@ CREATE TABLE `albums` (
 CREATE TABLE `artists` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `identifier` varchar(229) NOT NULL
+  `identifier` varchar(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `artists`
+--
+
+INSERT INTO `artists` (`id`, `id_user`, `identifier`) VALUES
+(1, 5, '0epOFNiUfyON9EYx7Tpr6V');
 
 -- --------------------------------------------------------
 
@@ -67,7 +81,7 @@ CREATE TABLE `sessions` (
 CREATE TABLE `tracks` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `identifier` varchar(229) NOT NULL
+  `identifier` varchar(22) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -91,8 +105,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `pass`) VALUES
 (1, 'Allan Gabriel', 'allangabriel@gmail.com', '$2y$12$hBL8ilKYy0r4s/Df5wwUwu2lcU2DYrRBzZgWG.YFB2/LK8iPmOw1C'),
 (2, 'Breno Machado', 'brenomachado@gmail.com', '$2y$12$7wmgpIN/NKuT3yy2zooUY.Qv6G7tFerlw4r3..WOLJQkHClUNkbq.'),
 (3, 'Micaella Larissa', 'micaellalarissa@gmail.com', '$2y$12$tt9SDG23Bv17NCZYiBzJ7eqRUt3TeIoitLD3SrV7XJmoxwrmFkPnu'),
-(4, 'Renan Cavichi', 'renancavichi@gmail.com', '$2y$12$UzQAtn8Wc6XLNXck0Qg.pekO7LFR/qpvf5TXI4deuJha8bHWBk4eG'),
-(5, 'Vítor Ambrizzi', 'vitorambrizzi@gmail.com', '$2y$12$WXzGiSovbnVBI6nLzXmXruRwXqMcBjsexzLWW3PhJ/GBRufoee4xe');
+(5, 'Vítor Ambrizzi', 'vitorambrizzi-teste@gmail.com', '$2y$12$WXzGiSovbnVBI6nLzXmXruRwXqMcBjsexzLWW3PhJ/GBRufoee4xe');
 
 --
 -- Indexes for dumped tables
@@ -103,6 +116,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `pass`) VALUES
 --
 ALTER TABLE `albums`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQUE` (`identifier`),
   ADD KEY `id_user_albums-id_users` (`id_user`) USING BTREE;
 
 --
@@ -110,6 +124,7 @@ ALTER TABLE `albums`
 --
 ALTER TABLE `artists`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQUE` (`identifier`),
   ADD KEY `id_user_artists-id_users` (`id_user`);
 
 --
@@ -124,6 +139,7 @@ ALTER TABLE `sessions`
 --
 ALTER TABLE `tracks`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQUE` (`identifier`),
   ADD KEY `id_user_tracks-id_users` (`id_user`);
 
 --
@@ -141,19 +157,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `albums`
 --
 ALTER TABLE `albums`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tracks`
@@ -165,7 +181,7 @@ ALTER TABLE `tracks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
